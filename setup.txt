@@ -1,0 +1,24 @@
+Passo a passo para ajeitar o docker pra esse teste:
+    1. Abrir o CMD (sem nenhuma pasta selecionada)
+    2. Digitar os seguintes comandos:
+        docker run -d -e POSTGRES_PASSWORD=Pokemon10 --name pokemonlearn -p 5431:5432 --restart=always postgres
+        
+        docker start pokemonlearn
+
+        docker exec -it pokemonlearn bash
+    
+    A partir daqui, ele vai acessar o novo container postgres que tá no Docker e ir pro "root@" no cmd. Pode até abrir o docker pra ver o container lá
+
+    3. Agora, no root, usa o comando
+        createdb pokemon_practice
+    Se ele não funcionar e der o erro "connection to server on socket" me chama, eu explico o porquê dele acontecer e depois é só colocar o comando
+        createdb pokemon_practice -U postgres
+    
+    Dá pra saber que o comando createdb funcionou quando você digita, dá enter e não aparece nenhuma mensagem no cmd
+
+    4. Agora, no VSCode, vai no arquivo "dbscript.js", na barra superior esquerda clique em "Terminal" > "Novo Terminal" e digite os comandos que estão no arquivo "baixar.txt" pra baixar os packages necessários
+
+    5. Ainda no terminal do VSCode, execute o script do arquivo "dbscript.js" digitando "node .\dbscript.js". Ele automaticamente vai alimentar seu docker com a tabela certa pra usar pra aprendizagem (SEM FECHAR O CMD)
+    OBS: o dbscript.js só executa 1 vez, depois pode até apagar o arquivo se quiser (algo que eu não recomendo)
+
+    6. Pra confirmar que funcionou, vai no CMD que tá o root@ e digita "SELECT * FROM pokemon_data WHERE pokemon_type = 'dark';"

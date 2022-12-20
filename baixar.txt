@@ -1,0 +1,6 @@
+Comandos para baixar packages necessários:
+
+npm install -g axios
+npm install -g pg
+
+Se eles não funcionarem, tente dnovo só que, dessa vez, tirando o "-g"

@@ -1,15 +1,24 @@
-Passo a passo para ajeitar o docker pra esse teste:
-    1. Abrir o CMD
-    2. Digitar os seguintes comandos:
-        docker run -d -e POSTGRES_PASSWORD=Pokemon10 --name pokemonlearn -p 5431:5432 --restart=always postgres
-        
-        docker start pokemonlearn
+Olá! Isso aqui é um exercício de prática de JS/TS com SQL, async e chamada de API externa
 
-        docker exec -it pokemonlearn bash
-    
-    A partir daqui, ele vai acessar o novo container postgres que tá no Docker e ir pro "root@" no cmd. Pode até abrir o docker pra ver o container lá
+Antes de começar o exercício, é necessário seguir certinho o passo a passo do setup.txt. Se não seguir como está escrito nele, não vai dar certo o script de setup e vai ficar mais demorado pra começar o exercício em si...
 
-    3. Vai no VSCode e executa o script do arquivo "dbscript.js" (o mesmo que tá nessa pasta aqui). Ele automaticamente vai alimentar seu docker com a tabela certa pra usar pra aprendizagem (SEM FECHAR O CMD)
-    OBS: o dbscript.js só executa 1 vez, depois pode até apagar o arquivo se quiser
+Bom, agora que o setup foi terminado, o exercício consiste de uma tarefa relativamente "simples":
+    Usando um module chamado "fs" e outro chamado "pg", faça consultas na DataBase que tem uma tabela com 584 pokemons, transformando-a em um arquivo .csv que siga o seguinte padrão:
 
-    4. Pra confirmar que funcionou, vai no CMD que tá o root@ e digita "SELECT * FROM pokemon_list;" e dá enter
+        "id,nomeDoPokemon,tipoDoPokemon"
+
+    Requisitos:
+        1. O arquivo tem que ser feito automaticamente pelo seu código, de modo que fique na pasta "export" (que encontra-se vazia no começo da prática)
+
+        2. O arquivo precisa ter como primeira linha o nome de cada coluna (ou seja, a primeira linha tem que ser exatamente igual a que eu escrevi como o "padrão" do csv)
+
+    Práticas bônus:
+        O objetivo do exercício é praticar a escrita de códigos com async e usando módulos do JS. Porém, para complementar, alguns conceitos de TypeScript seriam bem legais se trabalhados aqui...
+
+        A. Faça uma interface no arquivo "objeto.interface.ts", que está na pasta "models", de modo que use ela como padrão ao converter os dados de cada pokemon para JSON para poder depois usar com o FS
+
+
+Se qualquer dúvida ou problema aparecer, pode me chamar que eu vou tentar te ajudar!
+(também seria legal uns updates de vez em quando sobre como está indo seu progresso durante o exercício, imagino que você vá encontrar vários erros e, como eu não usei o pg no typescript, não sei como exatamente ele vai funcionar).
+
+Bons estudos! ;)
