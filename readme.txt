@@ -12,6 +12,8 @@ Bom, agora que o setup foi terminado, o exercício consiste de uma tarefa relati
 
         2. O arquivo precisa ter como primeira linha o nome de cada coluna (ou seja, a primeira linha tem que ser exatamente igual a que eu escrevi como o "padrão" do csv)
 
+        3. Quando concluir tudo que precisa fazer, faça um commit/push pro repositório no github
+
     Práticas bônus:
         O objetivo do exercício é praticar a escrita de códigos com async e usando módulos do JS. Porém, para complementar, alguns conceitos de TypeScript seriam bem legais se trabalhados aqui...
 
